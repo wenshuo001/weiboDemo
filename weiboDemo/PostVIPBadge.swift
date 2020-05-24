@@ -8,14 +8,27 @@
 
 import SwiftUI
 
+
 struct PostVIPBadge: View {
+    let vip : Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group{
+            if vip{
+                       Text("V")
+                              .bold() // 加粗
+                                  .font(.system(size: 11))
+                                  .frame(width:15,height: 15)
+                                  .foregroundColor(.yellow)
+                                  .background(Color.red)
+                                  .clipShape(Circle())
+                                  .overlay(RoundedRectangle(cornerRadius: 7.5).stroke(Color.white,lineWidth: 1))
+                   }
+        }
     }
 }
 
 struct PostVIPBadge_Previews: PreviewProvider {
     static var previews: some View {
-        PostVIPBadge()
+        PostVIPBadge(vip :true)
     }
 }
