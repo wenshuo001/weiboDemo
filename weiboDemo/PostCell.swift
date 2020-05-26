@@ -51,18 +51,17 @@ struct PostCell: View {
                         .frame(width:50,height:26)
                         .overlay(RoundedRectangle(cornerRadius: 13)
                         .stroke(Color.orange,lineWidth: 1))
-                    }.buttonStyle(BorderlessButtonStyle())
+                    }.buttonStyle(BorderlessButtonStyle()) // 去除item的 按钮抢占点击事件。
                 }
             }
             
             Text(post.text).font(.system(size: 17))
             
             if !post.images.isEmpty{
-                loadImage(name:post.images[0])
-                .resizable() //可缩放
-                .scaledToFill()
-                    .frame(width:UIScreen.main.bounds.width-30,height: (UIScreen.main.bounds.width-30)*0.75)
-                .clipped()
+                
+                PostImageCell(images: post.images, width: UIScreen.main.bounds.width-30)
+                
+               
                 
             }
             Divider() // 添加分割线
@@ -78,7 +77,7 @@ struct PostCell: View {
                 }
                  Spacer()
             }
-            Rectangle()
+            Rectangle() //填充分割线
                 .padding(.horizontal,-15)
                 .frame(height:10)
                 .foregroundColor(Color(red:238/255,green:238/255,blue :238/255))
