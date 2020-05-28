@@ -22,10 +22,11 @@ struct HomeNavigationBar: View {
                 Image(systemName: "camera")
                     .resizable()
                     .scaledToFit()
-                    .frame(width:KLableWidth,height: KButtonHeight)
+                    .frame(width:KButtonHeight,height: KButtonHeight)
                     .padding(.horizontal,15)
                     .padding(.top,5)
                     .foregroundColor(.black)
+                     
             }
             
             Spacer()
@@ -77,12 +78,13 @@ struct HomeNavigationBar: View {
                            Image(systemName: "plus.circle.fill")
                                .resizable()
                                .scaledToFit()
-                               .frame(width:KLableWidth,height: KButtonHeight)
+                               .frame(width:KButtonHeight,height: KButtonHeight)
                                .padding(.horizontal,15)
                                .padding(.top,5)
                                .foregroundColor(.orange)
                        }
         }
+        .frame(width:UIScreen.main.bounds.width)
     }
 }
 

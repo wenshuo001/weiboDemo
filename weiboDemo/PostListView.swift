@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct PostListView: View {
-    
-    init(){
-        // 去除UITableView 默认的 分割线
-        UITableView.appearance().separatorStyle = .none
-        // 去除UITableViewCell 默认选中样式
-        UITableViewCell.appearance().selectionStyle = .none
+    let cateGory : PostListCategory
+     
+    var postList: PostList{
+        switch cateGory {
+        case .recommend:
+            return loadPostListData("PostListData_recommend_1.json")
+        case .hot:
+            return loadPostListData("PostListData_hot_1.json")
+        }
     }
-    
+     
     var body: some View {
         List{
             //ForEach(postList.list,id: \.id){post in。
@@ -37,7 +40,7 @@ struct PostListView: View {
 struct PostListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{ //页面跳转
-            PostListView()
+            PostListView(cateGory: .recommend)
             .navigationBarTitle("111")// 必须设置title 才能隐藏bar
             .navigationBarHidden(true)
         }

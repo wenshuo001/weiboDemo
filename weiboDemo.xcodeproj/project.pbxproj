@@ -102,6 +102,8 @@
 		7060B1A1247A8F38000DCE40 /* PostCellToolBarButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7060B1A0247A8F38000DCE40 /* PostCellToolBarButtom.swift */; };
 		7060B1A3247AAE15000DCE40 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7060B1A2247AAE15000DCE40 /* PostListView.swift */; };
 		7060B1A5247D63A3000DCE40 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7060B1A4247D63A3000DCE40 /* PostImageCell.swift */; };
+		7079EAAF248012DF0039A451 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAAE248012DF0039A451 /* HomeView.swift */; };
+		7079EAB12480168C0039A451 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAB02480168C0039A451 /* UserData.swift */; };
 		707CB466247D78460069035C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CB465247D78460069035C /* PostDetailView.swift */; };
 		707CB468247EC73A0069035C /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CB467247EC73A0069035C /* HomeNavigationBar.swift */; };
 /* End PBXBuildFile section */
@@ -204,6 +206,8 @@
 		7060B1A0247A8F38000DCE40 /* PostCellToolBarButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellToolBarButtom.swift; sourceTree = "<group>"; };
 		7060B1A2247AAE15000DCE40 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		7060B1A4247D63A3000DCE40 /* PostImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		7079EAAE248012DF0039A451 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7079EAB02480168C0039A451 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		707CB465247D78460069035C /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		707CB467247EC73A0069035C /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,6 +258,8 @@
 				7060B1A4247D63A3000DCE40 /* PostImageCell.swift */,
 				707CB465247D78460069035C /* PostDetailView.swift */,
 				707CB467247EC73A0069035C /* HomeNavigationBar.swift */,
+				7079EAAE248012DF0039A451 /* HomeView.swift */,
+				7079EAB02480168C0039A451 /* UserData.swift */,
 			);
 			path = weiboDemo;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7079EAB12480168C0039A451 /* UserData.swift in Sources */,
 				7060B0DE24743119000DCE40 /* AppDelegate.swift in Sources */,
 				707CB466247D78460069035C /* PostDetailView.swift in Sources */,
 				7060B0E024743119000DCE40 /* SceneDelegate.swift in Sources */,
@@ -519,6 +526,7 @@
 				7060B0F424743A40000DCE40 /* PostCell.swift in Sources */,
 				707CB468247EC73A0069035C /* HomeNavigationBar.swift in Sources */,
 				7060B19D247A3DAA000DCE40 /* PostVIPBadge.swift in Sources */,
+				7079EAAF248012DF0039A451 /* HomeView.swift in Sources */,
 				7060B1A5247D63A3000DCE40 /* PostImageCell.swift in Sources */,
 				7060B1A1247A8F38000DCE40 /* PostCellToolBarButtom.swift in Sources */,
 			);
