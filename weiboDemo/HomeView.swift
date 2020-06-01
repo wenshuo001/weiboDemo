@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var leftPercent: CGFloat = 0
+    
     init() {
         // 去除UITableView 默认的 分割线
                UITableView.appearance().separatorStyle = .none
@@ -17,17 +19,20 @@ struct HomeView: View {
     }
     var body: some View {
         NavigationView{
-            ScrollView(.horizontal,showsIndicators: false){
-                HStack(spacing: 0){
-                    PostListView(cateGory: .recommend)
-                        .frame(width:UIScreen.main.bounds.width)
-                    PostListView(cateGory: .hot)
-                        .frame(width:UIScreen.main.bounds.width)
+        
+            GeometryReader{ geometry in
+                HScrollViewController(pageWidth: geometry.size.width, contentSize:  CGSize(width: geometry.size.width * 2,height: geometry.size.height),leftPerent: self.$leftPercent)
+                {
+                    HStack(spacing: 0){
+                           PostListView(cateGory: .recommend)
+                                           .frame(width:UIScreen.main.bounds.width)
+                            PostListView(cateGory: .hot)
+                                           .frame(width:UIScreen.main.bounds.width)
+                    }
                 }
-                
             }
             .edgesIgnoringSafeArea(.bottom)// 忽略底部的安全区域
-            .navigationBarItems(leading: HomeNavigationBar(leftPercent: 0))
+            .navigationBarItems(leading: HomeNavigationBar(leftPercent: $leftPercent))
                 .navigationBarTitle("首页",displayMode: .inline) //隐藏默认的头部导航栏
         }
     }
