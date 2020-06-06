@@ -18,7 +18,7 @@ struct HomeView: View {
                UITableViewCell.appearance().selectionStyle = .none
     }
     var body: some View {
-        NavigationView{
+        NavigationView{ 
         
             GeometryReader{ geometry in
                 HScrollViewController(pageWidth: geometry.size.width, contentSize:  CGSize(width: geometry.size.width * 2,height: geometry.size.height),leftPerent: self.$leftPercent)
@@ -40,6 +40,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(UserData())
     }
 }

@@ -18,13 +18,14 @@ struct PostDetailView: View {
             ForEach(1...10,id: \.self){ i in
                 Text("评论\(i)")
             }
-        }
+        }.navigationBarTitle("详情", displayMode: .inline)
         
     }
 }
 
 struct PostDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailView(post: postList.list[0])
+        let userData = UserData()
+      return  PostDetailView(post: userData.recommendPostList.list[0]).environmentObject(userData)
     }
 }

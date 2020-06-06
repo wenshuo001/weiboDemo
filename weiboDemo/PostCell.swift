@@ -12,8 +12,16 @@ struct PostCell: View {
     
     let post : Post
     
+    
+    var bindingPost : Post{ // 只读属性
+        userData.post(forId: post.id)!
+    }
+    
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
-        VStack{
+        var post = bindingPost
+        return VStack{
             HStack(spacing: 5){
                 Image(uiImage: UIImage(named:post.avatar)!)
                     .resizable() // 可缩放
@@ -43,7 +51,8 @@ struct PostCell: View {
                 if !post.isFollowed{
                 
                     Button(action: {
-                       print("点击了关注")
+                        post.isFollowed = true
+                        self.userData.update(post)
                     }){
                        Text("关注")
                         .font(Font.system(size:14))
@@ -72,8 +81,16 @@ struct PostCell: View {
                     print("Click comment button")
                 }
                  Spacer()
-                PostCellToolBarButtom(image: "heart", text: post.likeCountText, color: .black){
-                    print("Click comment ,message")
+                PostCellToolBarButtom(image: post.isLiked ? "heart.fill" : "heart", text: post.likeCountText, color: post.isLiked ? .red : .black){
+                    if post.isLiked{
+                        post.isLiked = false
+                        post.likeCount -= 1
+                    }else{
+                        post.isLiked = true
+                        post.likeCount += 1
+                    
+                    }
+                    self.userData.update(post)
                 }
                  Spacer()
             }
@@ -88,6 +105,9 @@ struct PostCell: View {
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell(post :postList.list[2])
+        let userData = UserData()
+        return  PostCell(post: userData.recommendPostList.list[0]).environmentObject(userData)
+        
+         
     }
 }

@@ -32,7 +32,7 @@ struct HScrollViewController<Content: View>: UIViewControllerRepresentable {
         context.coordinator.scrollview = scrollView
         let vc = UIViewController()
         vc.view.addSubview(scrollView)
-        
+         //UIHostingController 把一个view 转换成 ViewController
         let host = UIHostingController(rootView: content)
         vc.addChild(host)
         
