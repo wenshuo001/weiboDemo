@@ -18,6 +18,10 @@ class KeyboardResponder: ObservableObject {
         return false
     }
     
+    deinit { // deinit 在这个变量销毁前调用
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     init(){// 虚拟键盘的监听
         NotificationCenter.default.addObserver(self, selector: #selector(keyboradWillShow(_:)) , name: UIWindow.keyboardWillShowNotification, object: nil)
         //键盘隐藏的通知

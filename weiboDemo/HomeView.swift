@@ -35,6 +35,7 @@ struct HomeView: View {
             .navigationBarItems(leading: HomeNavigationBar(leftPercent: $leftPercent))
                 .navigationBarTitle("首页",displayMode: .inline) //隐藏默认的头部导航栏
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // 简单适配 ipad
     }
 }
 
