@@ -17,9 +17,13 @@ struct CommentInputView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var text: String = ""
+    
+    //ObservedObject 和 EnvironmentObject（环境对象差不多）不同的是这里必须要赋值
+    @ObservedObject private var keyboardResponder = KeyboardResponder()
+    
     var body: some View {
         VStack(spacing: 0){
-            CommentTextView(text: $text)
+            CommentTextView(text: $text, beginEdittingOnAppear: true)
             
             HStack(spacing: 0){
                 Button(action: {
@@ -41,12 +45,15 @@ struct CommentInputView: View {
                     Text("发送").padding()
                 }
             }
-        }
+        }.padding(.bottom, keyboardResponder.keyBoardHeight)
+            //判断是否显示安全区域
+            .edgesIgnoringSafeArea(keyboardResponder.keyboardShow() ?.bottom : [])
+        
     }
 }
 
 struct CommentInputView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentInputView(post: UserData().recommendPostList.list[0])
+       CommentInputView(post: UserData().recommendPostList.list[0])
     }
 }
