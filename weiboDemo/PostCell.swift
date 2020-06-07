@@ -12,12 +12,14 @@ struct PostCell: View {
     
     let post : Post
     
-    
+    @State var presentComment: Bool = false
     var bindingPost : Post{ // 只读属性
         userData.post(forId: post.id)!
     }
     
     @EnvironmentObject var userData: UserData
+    
+     
     
     var body: some View {
         var post = bindingPost
@@ -78,8 +80,13 @@ struct PostCell: View {
             HStack(spacing: 0){
                 Spacer()
                 PostCellToolBarButtom(image: "message", text: post.commentCountText, color: .black){
-                    print("Click comment button")
+                     self.presentComment = true
+                }.sheet(isPresented: $presentComment){
+                    // 推出哪一个View
+                    CommentInputView(post: post).environmentObject(self.userData)
                 }
+                
+                
                  Spacer()
                 PostCellToolBarButtom(image: post.isLiked ? "heart.fill" : "heart", text: post.likeCountText, color: post.isLiked ? .red : .black){
                     if post.isLiked{

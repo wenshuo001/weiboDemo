@@ -105,6 +105,8 @@
 		7079EAAF248012DF0039A451 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAAE248012DF0039A451 /* HomeView.swift */; };
 		7079EAB12480168C0039A451 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAB02480168C0039A451 /* UserData.swift */; };
 		7079EAB32483BDCA0039A451 /* HScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAB22483BDCA0039A451 /* HScrollViewController.swift */; };
+		7079EAB5248C9F1C0039A451 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAB4248C9F1C0039A451 /* CommentInputView.swift */; };
+		7079EAB7248CB01C0039A451 /* CommentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079EAB6248CB01C0039A451 /* CommentTextView.swift */; };
 		707CB466247D78460069035C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CB465247D78460069035C /* PostDetailView.swift */; };
 		707CB468247EC73A0069035C /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707CB467247EC73A0069035C /* HomeNavigationBar.swift */; };
 /* End PBXBuildFile section */
@@ -210,6 +212,8 @@
 		7079EAAE248012DF0039A451 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7079EAB02480168C0039A451 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7079EAB22483BDCA0039A451 /* HScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollViewController.swift; sourceTree = "<group>"; };
+		7079EAB4248C9F1C0039A451 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		7079EAB6248CB01C0039A451 /* CommentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextView.swift; sourceTree = "<group>"; };
 		707CB465247D78460069035C /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		707CB467247EC73A0069035C /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +267,8 @@
 				7079EAAE248012DF0039A451 /* HomeView.swift */,
 				7079EAB02480168C0039A451 /* UserData.swift */,
 				7079EAB22483BDCA0039A451 /* HScrollViewController.swift */,
+				7079EAB4248C9F1C0039A451 /* CommentInputView.swift */,
+				7079EAB6248CB01C0039A451 /* CommentTextView.swift */,
 			);
 			path = weiboDemo;
 			sourceTree = "<group>";
@@ -522,10 +528,12 @@
 				7079EAB12480168C0039A451 /* UserData.swift in Sources */,
 				7060B0DE24743119000DCE40 /* AppDelegate.swift in Sources */,
 				7079EAB32483BDCA0039A451 /* HScrollViewController.swift in Sources */,
+				7079EAB7248CB01C0039A451 /* CommentTextView.swift in Sources */,
 				707CB466247D78460069035C /* PostDetailView.swift in Sources */,
 				7060B0E024743119000DCE40 /* SceneDelegate.swift in Sources */,
 				7060B1A3247AAE15000DCE40 /* PostListView.swift in Sources */,
 				7060B0E224743119000DCE40 /* ContentView.swift in Sources */,
+				7079EAB5248C9F1C0039A451 /* CommentInputView.swift in Sources */,
 				7060B19F247A6182000DCE40 /* Post.swift in Sources */,
 				7060B0F424743A40000DCE40 /* PostCell.swift in Sources */,
 				707CB468247EC73A0069035C /* HomeNavigationBar.swift in Sources */,
